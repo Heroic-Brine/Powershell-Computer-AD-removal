@@ -15,7 +15,7 @@ switch ($YesNo)
 {
      Y{
           'restarting computer Goodbye!'
-          Restart-Computer -delay 2
+          Restart-Computer
      }
      N{
           'Ok Goodbye!'
