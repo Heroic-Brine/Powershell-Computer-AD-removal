@@ -1,6 +1,13 @@
-wirte-hos
-$credential = Get-Credential 
-write-host $credential
-Start-Sleep 5
-Remove-Computer -localcredential $credential -force
-Start-Sleep 5
+param(
+     [Parameter(Mandatory = $true)]
+     #the thorw is unessery due to the mandatory written above i just wanteted to try thorws
+     [string] $username = $(throw "-username is required") 
+)
+#write-host $username
+#Start-Sleep 5
+#password is collected here directly as secure strig
+Remove-Computer -credential $username -force
+Start-Sleep 2
+Write-Host "Goodbye"
+Start-Sleep 3
+exit
